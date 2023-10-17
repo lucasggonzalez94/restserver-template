@@ -1,8 +1,11 @@
 const { response } = require('express');
 
 const getUsers = (req, res = response) => {
+  const queryParams = req.query;
+
   res.json({
-    msg: 'get API'
+    msg: 'get API',
+    queryParams
   })
 };
 
@@ -16,8 +19,10 @@ const postUser = (req, res = response) => {
 };
 
 const updateUser = (req, res = response) => {
+  const id = req.params.id;
   res.json({
-    msg: 'put API'
+    msg: 'put API',
+    id
   })
 };
 
